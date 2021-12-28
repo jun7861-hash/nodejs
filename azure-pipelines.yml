@@ -41,11 +41,11 @@ stages:
         bucketName: 'basicnodejsbucket2'
         sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
         globExpressions: 'basicnodejs.zip'
-        createBucket: truetrue
+        createBucket: true
 
     - task: BeanstalkDeployApplication@1
       inputs:
-        awsCredentials: 'myAWSconnection'
+        awsCredentials: 'project001-service-connection'
         regionName: 'ap-southeast-1'
         applicationName: 'basicnodejs'
         environmentName: 'basicnodejs-env'
