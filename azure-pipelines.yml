@@ -50,5 +50,5 @@ stages:
         applicationName: 'basicnodejs001'
         environmentName: 'basicnodejs001-env'
         applicationType: 's3'
-        deploymentBundleBucket: 'basicnodejsbucket2'
-        deploymentBundleKey: 'basicnodejskey'
+        deploymentBundleBucket: 'basicnodejsbucket001'
+        deploymentBundleKey: 'basicnodejskey001'
