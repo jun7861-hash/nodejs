@@ -36,11 +36,11 @@ stages:
 
     - task: S3Upload@1
       inputs:
-        awsCredentials: 'myAWSconnection'
+        awsCredentials: 'project001-service-connection'
         regionName: 'ap-southeast-1'
         bucketName: 'basicnodejsbucket2'
         sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
-        globExpressions: '**'
+        globExpressions: 'basicnodejs.zip'
         createBucket: true
 
     - task: BeanstalkDeployApplication@1
