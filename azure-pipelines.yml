@@ -49,3 +49,4 @@ stages:
         applicationName: 'basicnodejs-eb001'
         environmentName: 'basicnodejs-eb001-env'
         applicationType: 's3'
+        deploymentBundleBucket: 'basicnodejs001bucket'
