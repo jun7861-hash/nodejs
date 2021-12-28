@@ -50,3 +50,4 @@ stages:
         environmentName: 'basicnodejs-eb001-env'
         applicationType: 's3'
         deploymentBundleBucket: 'basicnodejs001bucket'
+        deploymentBundleKey: 'basicnodejs001key'
