@@ -36,7 +36,7 @@ stages:
 
     - task: AmazonWebServices.aws-vsts-tools.S3Upload.S3Upload@1
       inputs:
-        awsCredentials: 'project001-service-connection'
+        awsCredentials: 'myAWSconnection'
         regionName: 'ap-southeast-1'
         bucketName: 'basicnodejsbucket2'
         sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
