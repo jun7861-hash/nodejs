@@ -42,7 +42,6 @@ stages:
         sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
         globExpressions: 'basicnodejs001.zip'
         createBucket: true
-
     - task: BeanstalkDeployApplication@1
       inputs:
         awsCredentials: 'project001-service-connection'
@@ -50,5 +49,3 @@ stages:
         applicationName: 'basicnodejs-eb001'
         environmentName: 'basicnodejs-eb001-env'
         applicationType: 's3'
-        deploymentBundleBucket: 'basicnodejsbucket-eb001'
-        deploymentBundleKey: 'basicnodejskey-eb001'
