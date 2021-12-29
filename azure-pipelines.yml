@@ -46,8 +46,8 @@ stages:
       inputs:
         awsCredentials: 'project001-service-connection'
         regionName: 'ap-southeast-1'
-        applicationName: 'basicnodejs-eb001'
-        environmentName: 'basicnodejs-eb001-env'
+        applicationName: 'samplenodejs'
+        environmentName: 'samplenodejs-env'
         applicationType: 's3'
-        deploymentBundleBucket: 'basicnodejs001bucket'
-        deploymentBundleKey: 'basicnodejs001key'
+        deploymentBundleBucket: 'samplenodejsbucket'
+        deploymentBundleKey: 'samplenodejskey'
