@@ -49,5 +49,5 @@ stages:
         applicationName: 'samplenodejs'
         environmentName: 'Samplenodejs-env'
         applicationType: 's3'
-        deploymentBundleBucket: 'samplenodejsbucket'
+        deploymentBundleBucket: 'basicnodejs001'
         deploymentBundleKey: 'samplenodejskey'
