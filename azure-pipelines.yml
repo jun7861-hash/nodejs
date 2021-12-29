@@ -47,7 +47,7 @@ stages:
         awsCredentials: 'project001-service-connection'
         regionName: 'ap-southeast-1'
         applicationName: 'samplenodejs'
-        environmentName: 'samplenodejs-env'
+        environmentName: 'Samplenodejs-env'
         applicationType: 's3'
         deploymentBundleBucket: 'samplenodejsbucket'
         deploymentBundleKey: 'samplenodejskey'
