@@ -41,12 +41,12 @@ stages:
         globExpressions: 'basicnodejs.zip'
         createBucket: true
 
-    # - task: BeanstalkDeployApplication@1
-    #   inputs:
-    #     awsCredentials: 'service-connection-001'
-    #     regionName: 'ap-southeast-1'
-    #     applicationName: 'samplenodejs'
-    #     environmentName: 'samplenodejs-env'
-    #     applicationType: 's3'
-    #     deploymentBundleBucket: 'samplenodejs'
-    #     deploymentBundleKey: 'basicnodejs.zip'
+    - task: BeanstalkDeployApplication@1
+      inputs:
+        awsCredentials: 'service-connection-001'
+        regionName: 'ap-southeast-1'
+        applicationName: 'samplenodejs'
+        environmentName: 'Samplenodejs-env'
+        applicationType: 's3'
+        deploymentBundleBucket: 'samplenodejs'
+        deploymentBundleKey: 'basicnodejs.zip'
