@@ -16,9 +16,7 @@ stages:
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
-        Contents: |
-          **.js*
-          package.json
+        Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)/_basicnodejs'
 
     - task: PublishBuildArtifacts@1
