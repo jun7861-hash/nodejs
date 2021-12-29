@@ -34,7 +34,7 @@ stages:
 
     - task: S3Upload@1
       inputs:
-        awsCredentials: 'project001-service-connection'
+        awsCredentials: 'service-connection-001'
         regionName: 'ap-southeast-1'
         bucketName: 'samplenodejs'
         sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
