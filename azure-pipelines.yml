@@ -51,3 +51,5 @@ stages:
         applicationType: 's3'
         deploymentBundleBucket: 'basicnodejs001'
         deploymentBundleKey: 'basicnodejs001.zip'
+        logRequest: true
+        logResponse: true
