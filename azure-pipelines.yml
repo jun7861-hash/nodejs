@@ -40,14 +40,15 @@ stages:
         sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
         globExpressions: 'samplenodejs.zip'
         createBucket: true
-    - task: BeanstalkDeployApplication@1
-      inputs:
-        awsCredentials: 'project001-service-connection'
-        regionName: 'ap-southeast-1'
-        applicationName: 'samplenodejs'
-        environmentName: 'Samplenodejs-env'
-        applicationType: 's3'
-        deploymentBundleBucket: 'samplenodejs'
-        deploymentBundleKey: 'samplenodejs.zip'
-        logRequest: true
-        logResponse: true
+        
+    # - task: BeanstalkDeployApplication@1
+    #   inputs:
+    #     awsCredentials: 'project001-service-connection'
+    #     regionName: 'ap-southeast-1'
+    #     applicationName: 'samplenodejs'
+    #     environmentName: 'Samplenodejs-env'
+    #     applicationType: 's3'
+    #     deploymentBundleBucket: 'samplenodejs'
+    #     deploymentBundleKey: 'samplenodejs.zip'
+    #     logRequest: true
+    #     logResponse: true
