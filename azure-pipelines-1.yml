@@ -1,0 +1,52 @@
+stages:
+- stage: Build
+  displayName: "Build"
+  jobs:
+  - job: 'Build'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+
+    - script: |
+        npm install
+      displayName: 'npm install and build'
+
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/_basicnodejs'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/_basicnodejs'
+        ArtifactName: '_basicnodejs'
+        publishLocation: 'Container'
+
+    - task: ArchiveFiles@2
+      displayName: 'Zip Task'
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/_basicnodejs'
+        includeRootFolder: false
+        archiveFile: '$(System.DefaultWorkingDirectory)/_basicnodejs/basicnodejs.zip'  
+
+    - task: S3Upload@1
+      inputs:
+        awsCredentials: 'service-connection-001'
+        regionName: 'ap-southeast-1'
+        bucketName: 'samplenodejs'
+        sourceFolder: '$(System.DefaultWorkingDirectory)/_basicnodejs/'
+        globExpressions: 'samplenodejs.zip'
+        createBucket: true
+
+    - task: BeanstalkDeployApplication@1
+      inputs:
+        awsCredentials: 'service-connection-001'
+        regionName: 'ap-southeast-1'
+        applicationName: 'samplenodejs'
+        environmentName: 'Samplenodejs-env'
+        applicationType: 's3'
+        deploymentBundleBucket: 'samplenodejs'
+        deploymentBundleKey: 'samplenodejs.zip'
