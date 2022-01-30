@@ -1,8 +1,8 @@
 stages:
 - stage: Build
-  displayName: "Build"
+  displayName: "build dev"
   jobs:
-  - job: 'Build'
+  - job: APP_BUILD
     steps:
     - task: NodeTool@0
       inputs:
@@ -63,3 +63,16 @@ stages:
         deploymentBundleKey: 'basicnodejs.zip'
         logRequest: true
         logResponse: true
+
+
+  - job: TF_Plan_DEV
+    dependsOn: APP_BUILD
+    displayName: "API TF Plan for DEV"
+    steps:
+      # Give Terraform access to Application Code
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          buildType: 'current'
+          downloadType: 'single'
+          artifactName: 'functions'
+          downloadPath: 'terraform/'
